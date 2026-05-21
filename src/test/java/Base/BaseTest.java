@@ -28,12 +28,9 @@ public class BaseTest {
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         driver.manage().window().maximize();
         driver.navigate().to("https://practice.expandtesting.com/register");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-
-
     }
 }

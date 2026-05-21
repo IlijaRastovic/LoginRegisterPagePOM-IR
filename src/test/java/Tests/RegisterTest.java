@@ -25,9 +25,6 @@ public class RegisterTest extends BaseTest {
         registerPage = new RegisterPage(driver);
         loginPage = new LoginPage(driver);
         profilPage = new ProfilPage(driver);
-        Thread.sleep(5000);
-
-
 
     }
 
