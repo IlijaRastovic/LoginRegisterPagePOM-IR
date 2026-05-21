@@ -13,6 +13,10 @@ public class RegisterPage {
     WebElement passwordTxtBox;
     WebElement confirmPasswordTxtBox;
     WebElement registerBtn;
+    WebElement userNameErrorMsg;
+    WebElement passwordErrorMsg;
+    WebElement confirmPasswordErrorMsg;
+
 
     public RegisterPage(WebDriver driver) {
         this.driver = driver;
@@ -34,6 +38,18 @@ public class RegisterPage {
         return driver.findElement(By.cssSelector("button[type='submit']"));
     }
 
+    public WebElement getUserNameErrorMsg() {
+        return driver.findElement(By.id("flash"));
+    }
+
+    public WebElement getPasswordErrorMsg() {
+        return driver.findElement(By.id("flash"));
+    }
+
+    public WebElement getConfirmPasswordErrorMsg() {
+        return driver.findElement(By.id("flash"));
+    }
+
     //============================================================
 
     public void enterValidUsername() {
@@ -53,6 +69,21 @@ public class RegisterPage {
 
     public void clickRegisterBtn(){
         getRegisterBtn().sendKeys(Keys.ENTER);
+    }
+
+    public void enterInvalidUsername(){
+        getUserNameTxtBox().clear();
+        getUserNameTxtBox().sendKeys(TestData.invalidUserNameShort);
+    }
+
+    public void enterInvalidPassword(){
+        getPasswordTxtBox().clear();
+        getPasswordTxtBox().sendKeys(TestData.invalidPassword);
+    }
+
+    public void enterInvalidConfirmPassword(){
+        getConfirmPasswordTxtBox().clear();
+        getConfirmPasswordTxtBox().sendKeys(TestData.invalidPassword);
     }
 
 
